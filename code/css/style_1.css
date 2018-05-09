@@ -1,0 +1,20 @@
+html{
+	font-size: 16px;
+}
+body{
+	font-size: 100%;
+}
+h1{
+	font-size: 2em;
+}
+.info span, .connect span {
+  margin:0 5% 0 1%;
+  font-weight: 500;
+}
+.info label, .connect label{
+  font-weight: bold;
+}
+section p {
+  margin-top: -1.3em;
+  font-weight: 500;
+}

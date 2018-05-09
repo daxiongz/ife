@@ -1,0 +1,45 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+html{
+  font-size: 16px;
+}
+body{
+  font-size: 100%;
+}
+aside {
+  background-color: #848484;
+  color: white;
+}
+
+h1{
+  font-size: 1.5em;
+  padding: .7em 0 .7em 1em;
+}
+.info ~ section, .info{
+  border: 1px solid #D6D6D6;
+  border-top: none;
+}
+.skill, .edu, .project, .info, .connect{
+  height: 5.4em;
+}
+section h2{
+  float: left;
+  font-size: 1em;
+  padding: 2em 1.5em;
+  background-color: #D6D6D6;
+}
+.info span, .connect span {
+  margin:0 5% 0 1%;
+  font-weight: 500;
+}
+.info label, .connect label{
+  font-weight: bold;
+}
+section p {
+  font-weight: 500;
+}
+h4{
+  float: left;
+}
