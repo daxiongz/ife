@@ -14,6 +14,7 @@
  | row | 语文本方向相反 |
  | column | 列排列，与块轴方向一致，上到下 |
  | column-reverse | 与 column 相反 |
+ 
 3、`flex-wrap` flex项是否换行，容器属性设置：
 
  | 属性值 | 描述 |
@@ -21,6 +22,7 @@
  | nowrap | 不换行，会导致溢出 flex 容器，默认 |
  | wrap | 换行 |
  | wrap-reverse | 换行，与 wrap 相比，cross start 和 cross end 互换，整个内容颠倒 |
+ 
 4、`flex-flow` 是 `flex-direction` 和 `flex-wrap` 的缩写
 5、`flex` flex项设置， 包含三个属性值的压缩：
  1. `flex-grow`，设置 flex 项除去 margin padding 等外实际 content 尺寸站得比例大小。
