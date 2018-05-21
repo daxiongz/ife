@@ -1,6 +1,7 @@
 1、flex 概念介绍：
 
  ![flex 模型图](https://s20.postimg.cc/k9kx1iqfx/flex_1.png)
+ 
  * 主轴（main axis），沿着flex元素放置方向的轴（页面的列和行），该轴开始和结束的地方称为 `main start` 和 `main end`
  * 交叉轴（cross axis）,与主轴垂直的轴，开始和结束称为 `cross start` 和 `cross end`
  * 设置了 `display: flex` 的父元素是 flex 容器（flex container）
