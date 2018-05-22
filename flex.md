@@ -1,10 +1,12 @@
+0、弹性布局介绍：
+  弹性布局是指 通过调整其内元素的宽高，从而在任何显示设备上实现对可用显示空间最佳填充的能力。弹性盒子布局主要适用于应用程序的组件及小规模的布局，而栅格布局针对大规模的布局。使用这些新的布局方式时，注意兼容性，确定产品的用户场景都支持再使用，否则内容将不会展示。
 1、flex 概念介绍：
 
  ![flex 模型图](https://s20.postimg.cc/k9kx1iqfx/flex_1.png)
  
  * 主轴（main axis），沿着flex元素放置方向的轴（页面的列和行），该轴开始和结束的地方称为 `main start` 和 `main end`
  * 交叉轴（cross axis）,与主轴垂直的轴，开始和结束称为 `cross start` 和 `cross end`
- * 设置了 `display: flex` 的父元素是 flex 容器（flex container）
+ * 设置了 `display: flex` 或 `display: inline-flex` 的父元素是 flex 容器（flex container）
  * 在 flex 容器中表现为柔性的盒子的元素项称之为 flex 项（flex item）
 2、`flex-direction` 设置容器属性，调整主轴方向设置：
 
@@ -64,3 +66,5 @@
  | space-between | 相对居中，子项中间都有空，两端紧贴主轴起点和终点 |
  | space-around | 居中，子项间都有空 |
  | center | 水平居中 |
+
+9、flex 项顺序———— `order` ，改变 flex 项视觉展示顺序，而不影响 dom 元素真实顺序。属性值是整数，默认为0。值越大，视觉位置顺序越偏后；值一样时，dom 顺序靠前的先展示。
