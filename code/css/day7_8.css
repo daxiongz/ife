@@ -1,0 +1,54 @@
+header {
+	background-color: #333333;
+	color: #ffffff;
+	height: 80px;
+}
+.center960 {
+	width: 960px;
+	margin: 0 auto;
+	height: 100%;
+}
+.logo {
+	font-size: 1.5em;
+}
+.linkGroup {
+	float: right;
+	color: white;
+}
+.banner {
+	background-color: #66BB33;
+	height: 300px;
+}
+.banner .center960 {
+	position: relative;
+}
+.specialNum {
+	position: absolute;
+	bottom: 5px;
+	right: 2px;
+}
+.normal {
+	padding: 5px;
+	background-color: white;
+}
+.special {
+	padding: 10px 5px;
+	background-color: white;
+}
+nav {
+	width: 960px;
+	margin: 1px auto 0;
+	border-bottom: 1px solid #DDDDDD;
+}
+nav button {
+	border: 1px solid #DDDDDD;
+	border-radius: 5px 5px 0 0;
+	background-color: #EEEEEE;
+}
+nav button.active {
+	background-color: #fff;
+	border-bottom: 2px solid #fff;
+}
+.article .center960 {
+	display: flex;
+}
