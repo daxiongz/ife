@@ -1,3 +1,11 @@
+* {
+	box-sizing: border-box;
+}
+.clear:after {
+	content: "";
+	display: block;
+	clear: both;
+}
 header {
 	background-color: #333333;
 	color: #ffffff;
@@ -10,10 +18,15 @@ header {
 }
 .logo {
 	font-size: 1.5em;
+	float: left;
+	margin-top: 20px;
 }
 .linkGroup {
 	float: right;
-	color: white;
+	margin-top: 5px;
+}
+.linkGroup a {
+	color:  #ffffff;
 }
 .banner {
 	background-color: #66BB33;
@@ -24,31 +37,59 @@ header {
 }
 .specialNum {
 	position: absolute;
-	bottom: 5px;
+	bottom: 13px;
 	right: 2px;
 }
 .normal {
-	padding: 5px;
-	background-color: white;
+	padding: 5px 10px;
+	background-color: rgba(255, 255, 255, 0.6);
 }
 .special {
-	padding: 10px 5px;
+	padding: 13px 10px 5px;
 	background-color: white;
+}
+.navwrapper{
+	border-bottom: 1px solid #DDDDDD;
+	margin: 15px 0;
 }
 nav {
 	width: 960px;
-	margin: 1px auto 0;
-	border-bottom: 1px solid #DDDDDD;
+	margin: 0 auto;
+	position: relative;
+	top: 1px;
 }
 nav button {
 	border: 1px solid #DDDDDD;
-	border-radius: 5px 5px 0 0;
+	border-radius: 15px 15px 0 0;
 	background-color: #EEEEEE;
+	padding: 15px 20px;
+	float: left;
 }
 nav button.active {
 	background-color: #fff;
-	border-bottom: 2px solid #fff;
+	border-bottom: 1px solid #fff;
 }
 .article .center960 {
 	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+.content1, .content2 {
+	padding: 80px;
+	text-align: center;
+	height: 100px;
+	border: 1px solid #ccc;
+	margin-bottom: 10px;
+}
+footer {
+	margin-top: 10px;
+	background-color: #666666;
+	color: white;
+	text-align: center;
+	height: 120px;
+	width: 100%;
+}
+footer span {
+	display: inline-block;
+	margin-top: 10px;
 }

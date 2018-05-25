@@ -8,6 +8,7 @@
  * 交叉轴（cross axis）,与主轴垂直的轴，开始和结束称为 `cross start` 和 `cross end`
  * 设置了 `display: flex` 或 `display: inline-flex` 的父元素是 flex 容器（flex container）
  * 在 flex 容器中表现为柔性的盒子的元素项称之为 flex 项（flex item）
+ 
 2、`flex-direction` 设置容器属性，调整主轴方向设置：
 
  | 属性值 | 描述 |
@@ -19,6 +20,7 @@
  
 3、`flex-wrap` flex项是否换行，容器属性设置：
 
+
  | 属性值 | 描述 |
  | -- | -- |
  | nowrap | 不换行，会导致溢出 flex 容器，默认 |
@@ -26,7 +28,9 @@
  | wrap-reverse | 换行，与 wrap 相比，cross start 和 cross end 互换，整个内容颠倒 |
  
 4、`flex-flow` 是 `flex-direction` 和 `flex-wrap` 的缩写
+
 5、`flex` flex项设置， 包含三个属性值的压缩：
+
  1. `flex-grow`，设置 flex 项除去 margin padding 等外实际 content 尺寸站得比例大小。
  
  | 属性值 | 描述 |
@@ -48,6 +52,7 @@
  | initial | 继承于 agent 实现 |
 
  4. 总属性值为 none 时，等于三个属性分别为 0 0 auto
+ 
 6、`align-items` flex 容器设置，设置子项在交叉轴上位置排列：
 
  | 属性值 | 描述 |
@@ -57,6 +62,8 @@
  | flex-start/flex-end | 交叉轴的开始或结束 |
 
 7、`align-self` 子项设置，可以覆盖父元素容器设置的 `align-item` 属性，属性值与 `align-itens` 基本一致。某个子项 margin 置为0时，再设置此属性时，不在生效。
+
+
 8、`justify-content` 容器设置，子项在主轴上的排列。请注意，如果有任何一个子项 设置了 flex-grow 属性不为0，此属性将不会生效：
 
  | 属性值 | 描述 |
