@@ -1,36 +1,26 @@
-console.log('1');
+const RATE = 0.08,
+      PHONE = 5000,
+      EXTRA = 500,
+      BUDGET = 60000,
+      TOTAL = 100000;
+var num = prompt( "Please enter numbers that you want to buy: ");
+var amount = 0;
 
-setTimeout(function() {
-    console.log('2');
-    process.nextTick(function() {
-        console.log('3');
-    })
-    new Promise(function(resolve) {
-        console.log('4');
-        resolve();
-    }).then(function() {
-        console.log('5')
-    })
-})
-process.nextTick(function() {
-    console.log('6');
-})
-new Promise(function(resolve) {
-    console.log('7');
-    resolve();
-}).then(function() {
-    console.log('8')
-})
+function calculateTax(amt) {
+  return amt * RATE;
+}
 
-setTimeout(function() {
-    console.log('9');
-    process.nextTick(function() {
-        console.log('10');
-    })
-    new Promise(function(resolve) {
-        console.log('11');
-        resolve();
-    }).then(function() {
-        console.log('12')
-    })
-})
+while ( amount < TOTAL ) {
+  amount += PHONE;
+  if ( amount < BUDGET ) {
+    amount += EXTRA;
+  }
+}
+
+amount += calculateTax(amount);
+
+console.log("your purchase: " + amount);
+
+if ( amount > TOTAL ) {
+  console.log("You don't have much money!")
+}
