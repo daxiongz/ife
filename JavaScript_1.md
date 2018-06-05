@@ -1,3 +1,10 @@
+0、概念简析：
+
+ * ECMAscript 是 ECMA 搞的脚本规范；
+ * JavaScript 是基于 ECMAscript 规范实现的脚本语言，总体按照规范来，但是略有差异；
+ * 运行时，提供了 JavaScript 可以运行和操作的宿主对象。也被称为宿主环境，常见运行时有浏览器、Node.js。 
+ * JavaScript 引擎，是解释、执行 JavaScript 代码的。我们口中常说的某某浏览器不支持什么特性，是因为每个浏览器 JavaScript 引擎不同。
+ 
 1、字符串：
 
  * `substring(start, end)` 与 `slice(start, end)` 截取字符串某一部分，生成一个新字符串。虽然两者参数为NaN时，置为0，大于string长度时，置为string长度。但是前者参数小于0时，置为0；后者参数可为负，为负值时，倒数即可。
@@ -21,3 +28,6 @@
   * JS 是单线程的。事件循环（Event Loop）是其执行机制。
   * JS 任务分为 `macro-task`（宏任务）和 `micro-task`（微任务），宏任务内又分为执行队列和 `Event Queue`。宏任务包括 `script`、`setTimeout`、`setInterval`等，微任务包括 `Promise`、`process.nextTick` 等。JS 代码是一轮一轮执行的，遇见 `setTimeout`、`setInterval` 时,会将其放入当前轮次的 `Event Queue`, 遇见 `Promise`、`process.nextTick`时，会将其放入当前轮次的微任务队列中。每次执行时，优先执行宏任务中的执行队列中的事件，再去执行微任务队列中的事件，再去执行 `Event Queue` 中的事件。
   * 定时器中的延迟时间，并不是马上执行，而是当满足回调函数条件时，将对应事件压入 `Event Queue` 中，等待执行队列空闲时再予以执行。
+
+6、变量：
+  * `变量声明` : 使用英文字母、数字、下划线组成；数字和下划线不应作为开头；避免使用 JavaScript 关键字；尽量使用小写驼峰命名法。
