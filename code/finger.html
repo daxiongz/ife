@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fingerprintjs2/2.0.3/fingerprint2.js"></script>
+</head>
+<body>
+  <h1>fingerprint2 test</h1>
+  <h3></h3>
+</body>
+<script>
+  // var fingerprint = new Fingerprint2().get();
+  // console.log(fingerprint)
+  if (window.requestIdleCallback) {
+    alert(1)
+    requestIdleCallback(function () {
+        Fingerprint2.get(function (components) {
+          console.log(components) // an array of components: {key: ..., value: ...}
+          var str = Fingerprint2.x64hash128(components.map(function (pair) { return pair.value }).join(), 31)
+          // var str = JSON.stringify(components)
+          document.querySelector("h3").innerHTML = str
+        })
+    })
+} else {
+    setTimeout(function () {
+        Fingerprint2.get(function (components) {
+          console.log(components) // an array of components: {key: ..., value: ...}
+        })  
+    }, 500)
+}
+</script>
+</html>
