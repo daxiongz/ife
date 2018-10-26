@@ -28,6 +28,9 @@
     setTimeout(function () {
         Fingerprint2.get(function (components) {
           console.log(components) // an array of components: {key: ..., value: ...}
+          var str = Fingerprint2.x64hash128(components.map(function (pair) { return pair.value }).join(), 31)
+          // var str = JSON.stringify(components)
+          document.querySelector("h3").innerHTML = str
         })  
     }, 500)
 }
