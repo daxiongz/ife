@@ -54,7 +54,11 @@
 </body>
 <script>
   function createCanvas() {
-    html2canvas(document.body).then(canvas => {
+    html2canvas(document.body, {
+      logging: true,
+          // allowTaint: true,
+          useCORS: true,
+    }).then(canvas => {
       const img = new Image()
       let documentWidth = document.documentElement.offsetWidth > 768 ? 500 : document.documentElement.offsetWidth
       // alert(documentWidth)
