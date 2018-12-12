@@ -52,7 +52,7 @@
     html2canvas(document.body).then(canvas => {
       const img = new Image()
       let documentWidth = document.documentElement.offsetWidth > 768 ? 500 : document.documentElement.offsetWidth
-      alert(documentWidth)
+      // alert(documentWidth)
       // img.src = canvas.toDataURL('image/jpeg')
       img.src = canvas.toDataURL('image/png')
       img.style.width = documentWidth + 'px'
@@ -64,6 +64,9 @@
           obj.style.top = "0"
           obj.style.left = "0"
     });
+  }
+  window.onload = function () {
+    createCanvas()
   }
 </script>
 
