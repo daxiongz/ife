@@ -8,6 +8,25 @@
   <title>html2canvas test</title>
   <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
   <script src="./js/html2canvas.js"></script>
+  <style>
+    .wrap {
+      width: 300px;
+      height: 200px;
+      background-image: url(../2-img/bg.jpg);
+      background-size: cover;
+      background-position: center;
+    }
+    .wrap1 {
+      background-image: url(../2-img/flex_1.png);
+
+    }
+    .wrap2 {
+      background-image: url(../2-img/timg.jpg);
+    }
+    .wrap3 {
+      background-image: url(../2-img/viewport.png);
+    }
+  </style>
 </head>
 
 <body>
@@ -16,11 +35,15 @@
   <button onclick="createCanvas()">click</button>
   <br>
   <div class="img-wrap">
+    <div class="wrap"></div>
+    <div class="wrap wrap1"></div>
+    <div class=" wrap wrap2"></div>
+    <div class="wrap wrap3"></div>
     <img src="../2-img/bg.jpg" width="300" alt="">
     <img src="../2-img/flex_1.png" width="300" alt="">
     <img src="../2-img/timg.jpg" width="300" alt="">
     <img src="../2-img/viewport.png" width="300" alt="">
-    <img src="../2-img/现场 _ 我所亲历的邓同学被约谈事件.png" width="300" alt="">
+    <!-- <img src="../2-img/现场 _ 我所亲历的邓同学被约谈事件.png" width="300" alt=""> -->
   </div>
 
 </body>
