@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
 <head>
   <meta charset="UTF-8">
@@ -25,30 +28,30 @@
 <img id="avatar" src="">
 <div class="test-div"></div>
 <script>
-  const IMG_LOAD = 'https://img.alicdn.com/tfs/TB11rDdclLoK1RjSZFuXXXn0XXa-300-300.png';
+  // const IMG_LOAD = 'https://img.alicdn.com/tfs/TB11rDdclLoK1RjSZFuXXXn0XXa-300-300.png';
 
-  const imageProxy = (loadingImg) => {
-    return new Proxy(Image, {
-      construct(target, args){
-        const instance = Reflect.construct(target, args);
-        instance.src = loadingImg;
-        return instance;
-      }
-    });
-  };
-  const ImageProxy = imageProxy(IMG_LOAD);
+  // const imageProxy = (loadingImg) => {
+  //   return new Proxy(Image, {
+  //     construct(target, args){
+  //       const instance = Reflect.construct(target, args);
+  //       instance.src = loadingImg;
+  //       return instance;
+  //     }
+  //   });
+  // };
+  // const ImageProxy = imageProxy(IMG_LOAD);
 
-  const createImageProxy = (realImg) =>{
-    const img = new ImageProxy();
-    const virtualImg = new Image();
-    virtualImg.src = realImg;
-    virtualImg.onload = () => {
-      hasLoaded = true;
-      img.src = realImg;
-    };
-    return img;
-  }
-  var img = createImageProxy('https://cdn.dribbble.com/users/329207/screenshots/5289734/bemocs_db_dribbble_03_gold_leaf.jpg');
+  // const createImageProxy = (realImg) =>{
+  //   const img = new ImageProxy();
+  //   const virtualImg = new Image();
+  //   virtualImg.src = realImg;
+  //   virtualImg.onload = () => {
+  //     hasLoaded = true;
+  //     img.src = realImg;
+  //   };
+  //   return img;
+  // }
+  // var img = createImageProxy('https://cdn.dribbble.com/users/329207/screenshots/5289734/bemocs_db_dribbble_03_gold_leaf.jpg');
   
   let imgList = ["http://yunxi-material-library.oss-cn-hangzhou.aliyuncs.com/recordImg/1195/YzhXFCZf6k.JPG", "http://yunxi-material-library.oss-cn-hangzhou.aliyuncs.com/recordImg/1195/TjN3C687cz.JPG", "http://yunxi-material-library.oss-cn-hangzhou.aliyuncs.com/recordImg/1195/AkWijzAjeS.JPG"]
 
@@ -114,7 +117,7 @@
       contxt.drawImage(myImage2, 10, 100, 200, 300, 50, (index+1) * 400, 200, 300)
       // debugger
       if (index == imgList.length - 1) {
-        contxt.drawImage(location, 50, 10, 100, 100, 50, 50, 100, 100)
+        contxt.drawImage(location, 50, 100, 100, 100, 50, 50, 100, 100)
         setTimeout( () => {
           var base64 = canvas.toDataURL("image/png");  //"image/png" 这里注意一下
           var img = document.getElementById('avatar');
