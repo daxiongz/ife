@@ -19,6 +19,7 @@
 </style>
 <body>
 <canvas height="600" width="600" id="code" style="background-color: #999"></canvas>
+<img src="https://static.yunxi.tv/yps_h5/liked.svg" alt="location" id="location">
 
 <canvas id="canvas"></canvas>
 <img id="avatar" src="">
@@ -96,6 +97,7 @@
   //   // }
   // })
   var code = document.getElementById('code')
+  var location = document.getElementById('location')
   imgList.forEach( (it,index) => {
     var myImage2 = new Image();
     myImage2.crossOrigin = 'Anonymous';
@@ -112,10 +114,7 @@
       contxt.drawImage(myImage2, 10, 100, 200, 300, 50, (index+1) * 400, 200, 300)
       // debugger
       if (index == imgList.length - 1) {
-        console.log(index)
-        
-        console.log(code)
-        contxt.drawImage(code, 50, 700, 200, 200, 50, 100, 200, 200)
+        contxt.drawImage(location, 50, 10, 100, 100, 50, 50, 100, 100)
         setTimeout( () => {
           var base64 = canvas.toDataURL("image/png");  //"image/png" 这里注意一下
           var img = document.getElementById('avatar');
