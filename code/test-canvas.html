@@ -120,7 +120,9 @@
           var base64 = canvas.toDataURL("image/png");  //"image/png" 这里注意一下
           var img = document.getElementById('avatar');
           img.setAttribute('src' , base64);
-
+          img.style.position = "absolute"
+          img.style.top = "0"
+          img.style.left = "0"
 
         }, 500)
 
