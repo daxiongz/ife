@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+<head>
+  <meta charset="UTF-8">
+  <title>1-1 生成一个画布并绘制文本</title>
+</head>
+<style>
+  #canvas {
+    display: block;
+    width: 100%;
+    background: #fff;
+    border: thin inset #aaaa;
+  }
+  .test-div {
+    width: 300px;
+    height: 200px;
+  }
+</style>
+<body>
+<canvas id="canvas"></canvas>
+<img id="avatar" src="">
+<div class="test-div"></div>
+
+<script>
+  const IMG_LOAD = 'https://img.alicdn.com/tfs/TB11rDdclLoK1RjSZFuXXXn0XXa-300-300.png';
+
+  const imageProxy = (loadingImg) => {
+    return new Proxy(Image, {
+      construct(target, args){
+        const instance = Reflect.construct(target, args);
+        instance.src = loadingImg;
+        return instance;
+      }
+    });
+  };
+  const ImageProxy = imageProxy(IMG_LOAD);
+
+  const createImageProxy = (realImg) =>{
+    const img = new ImageProxy();
+    const virtualImg = new Image();
+    virtualImg.src = realImg;
+    virtualImg.onload = () => {
+      hasLoaded = true;
+      img.src = realImg;
+    };
+    return img;
+  }
+  var img = createImageProxy('https://cdn.dribbble.com/users/329207/screenshots/5289734/bemocs_db_dribbble_03_gold_leaf.jpg');
+  
+  let imgList = ["http://yunxi-material-library.oss-cn-hangzhou.aliyuncs.com/recordImg/1195/YzhXFCZf6k.JPG", "http://yunxi-material-library.oss-cn-hangzhou.aliyuncs.com/recordImg/1195/TjN3C687cz.JPG", "http://yunxi-material-library.oss-cn-hangzhou.aliyuncs.com/recordImg/1195/AkWijzAjeS.JPG"]
+
+
+  var w = document.body.clientWidth
+
+  var canvas = document.getElementById('canvas'),
+    contxt = canvas.getContext('2d');
+  canvas.width = w
+  canvas.height = w * 3
+
+  contxt.font = '36px PingFangSC'
+  contxt.fillStyle = 'cornflowerblue'
+  contxt.strokeStyle = 'blue'
+  contxt.fillText('Hello Canvas', 10, 25)
+
+
+
+  console.log()
+
+  imgList.forEach( (it,index) => {
+    var myImage2 = document.createElement("div")
+
+   $(myImage2).css('width', '300')
+   $(myImage2).css('height', '200')
+   $(myImage2).css('backgroundImage', 'it')
+   $(myImage2).css('backgroundSize', 'cover')
+    // myImage2.style.backgroundImage = it;   //你自己本地的图片或者在线图片
+    myImage2.onload = function () {
+      var scale = 1280 / 1920
+      contxt.drawImage(myImage2, 10, index * w * scale + 50, w, w * scale)
+      if (index == imgList.length - 1) {
+        console.log(index)
+        setTimeout( () => {
+          var base64 = canvas.toDataURL("image/png");  //"image/png" 这里注意一下
+          var img = document.getElementById('avatar');
+          img.setAttribute('src' , base64);
+
+
+        }, 500)
+
+      }
+    }
+  })
+
+  // imgList.forEach( (it,index) => {
+  //   var myImage2 = new Image();
+  //   myImage2.crossOrigin = 'Anonymous';
+  //   myImage2.src = it;   //你自己本地的图片或者在线图片
+  //   myImage2.onload = function () {
+  //     var scale = 1280 / 1920
+  //     contxt.drawImage(myImage2, 10, index * w * scale + 50, w, w * scale)
+  //     if (index == imgList.length - 1) {
+  //       console.log(index)
+  //       setTimeout( () => {
+  //         var base64 = canvas.toDataURL("image/png");  //"image/png" 这里注意一下
+  //         var img = document.getElementById('avatar');
+  //         img.setAttribute('src' , base64);
+
+
+  //       }, 500)
+
+  //     }
+  //   }
+  // })
+  
+
+
+
+
+</script>
+</body>
+</html>
